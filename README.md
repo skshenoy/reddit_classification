@@ -2,7 +2,7 @@
 
 ## This project is about pulling Reddit data and trying to classify which subreddit (topic-based forum) it came from, using various supervised learning methods.
 
-## Part 1 was data collection (gathering the Reddit data using the Pushshift API) which can be found in [notebook #1](./notebooks/1.%20Collecting%20Reddit%20Posts.ipynb). Part 2 is the fun stuff, including actual modeling.
+## Part 1 was data collection (gathering the Reddit data using the Pushshift API) which can be found in [notebook #1](./1.%20Collecting%20Reddit%20Posts.ipynb). Part 2 is the fun stuff, including actual modeling.
 
 ### Part 2A: Love and Law
 
