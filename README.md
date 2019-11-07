@@ -2,7 +2,7 @@
 
 ## This project is about pulling Reddit data and trying to classify which subreddit (topic-based forum) it came from, using various supervised learning methods.
 
-## Part 1 was data collection (gathering the Reddit data using the Pushshift API) which can be found in [notebook #1](./1.%20Collecting%20Reddit%20Posts.ipynb). Part 2 is the fun stuff, including actual modeling.
+## Part 1 was data collection (gathering the Reddit data using the [Pushshift API](https://github.com/pushshift/api)) which can be found in [notebook #1](./1.%20Collecting%20Reddit%20Posts.ipynb). Part 2 is the fun stuff, including actual modeling.
 
 ### Part 2A: Love and Law
 
@@ -22,19 +22,19 @@ Essentially, every post is an OP coming in to describe a (real or fictitious, si
 
 I ended up creating three different versions of the model:
 
-    - using just the text of OP's post (i.e., modeling _how assholes talk_)
-    
-    - using the text of the comments (i.e., modeling *how people talk **about** assholes*)
-    
-    - and using both.
+- using just the text of OP's post (i.e., modeling _how assholes talk_)
+
+- using the text of the comments (i.e., modeling *how people talk **about** assholes*)
+
+- and using both.
 
 Throughout this section, the metric I used to judge the models were the AUC-ROC score and then later the precision score because `asshole` was the positive class and I really wanted to know: could my model find the assholes?
 
-    - Part one: the best model was a multinomial naive Bayes model, with CountVectorizer() (500 features, filtering no stop words out, and looking at unigrams and bigrams). It had a precision of 26%, only a 7.4 improvement over †he 19.5% baseline.
-    
-    - Part two: the best model was a logistic regression model, with CountVectorizer() (500 features, filtering no stop words out, and looking at unigrams and bigrams). It had a precision of **55.8%, a 36.3% improvement over †he 19.5% baseline!**
-    
-    - Part three: essentially the same as part two, with 1.1% lower precision
+- Part one: the best model was a multinomial naive Bayes model, with CountVectorizer() (500 features, filtering no stop words out, and looking at unigrams and bigrams). It had a precision of 26%, only a 7.4 improvement over †he 19.5% baseline.
+
+- Part two: the best model was a logistic regression model, with CountVectorizer() (500 features, filtering no stop words out, and looking at unigrams and bigrams). It had a precision of **55.8%, a 36.3% improvement over †he 19.5% baseline!**
+
+- Part three: essentially the same as part two, with 1.1% lower precision
 
 My overall takeaway is that I'm impressed by the model's performance in part two recognizing how people talk *about* assholes, considering how simple the methodology was (using just a bag-of-words approach and losing almost all semantic context). Perhaps unsurprisingly part one had much worse results, which could be attributed to how much less input there was (one post versus up-to-500 comments) and/or to how people tell stories when they suspect that they're actually the bad guy -- there's a lot of context/information left out until commenters ask for it or point inconsistencies out, and there's often a lot of indirect/obfuscating language and passive voice as well. It's probably telling that one of the words that occurred the most during the EDA of `asshole` posts was "technically".
 
