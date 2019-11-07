@@ -10,7 +10,7 @@ To start off, I decided to compare two advice subreddits with fairly dissimilar 
 
 Overall, the best model was a logistic regression, which performed better with an accuracy score of 97.3% whereas the multinomial naive Bayes had an accuracy score of 93.6%. The vectorizer that was used in the logistic regression model was CountVectorizer() with 500 features, filtering English stop words out, and looking at unigrams and bigrams.
 
-My code and workflow are documented in the 2A notebook.
+My code and workflow are documented in [the 2A notebook](./2A.%20Classification%20-%20Love%20and%20Law.ipynb).
 
 ### Part 2B: Assholery
 
@@ -32,7 +32,7 @@ Throughout this section, the metric I used to judge the models were the AUC-ROC 
 
 My overall takeaway is that I'm impressed by the model's performance in part two recognizing how people talk *about* assholes, considering how simple the methodology was (using just a bag-of-words approach and losing almost all semantic context). Perhaps unsurprisingly part one had much worse results, which could be attributed to how much less input there was (one post versus up-to-500 comments) and/or to how people tell stories when they suspect that they're actually the bad guy -- there's a lot of context/information left out until commenters ask for it or point inconsistencies out, and there's often a lot of indirect/obfuscating language and passive voice as well. It's probably telling that one of the words that occurred the most during the EDA of `asshole` posts was "technically".
 
-My code and workflow are documented in the two 2B notebooks, where one is an overview of the best-performing models and the other a full rundown of all the models and sets of parameters I tried out.
+My code and workflow are documented in the two 2B notebooks, where [one is an overview of the best-performing models](./2B-Updated.%20Classification%20-%20Assholery%20(BEST).ipynb) and the other [a full rundown of all the models and sets of parameters I tried out](./2B-Updated.%20Classification%20-%20Assholery%20(FULL).ipynb).
 
 
 ### Part 2C: Bots
