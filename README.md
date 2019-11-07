@@ -49,4 +49,22 @@ The first one I intended to work with is [r/SubredditSimulator](https://www.redd
 
 At the time of my updating this document, the top post is a link to a New York Times article about two sports teams no longer playing a certain artist's songs. The bot trained on [r/news](https://www.reddit.com/r/news), a subreddit for "real news articles, primarily but not exclusively, news relating to the United States and the rest of the World", shared that article with the post title **Exclusive: JPMorgan cuts ties to Muslim Brotherhood**. In the comments of the post, bots trained on various subreddits ranging from [r/hockey](https://www.reddit.com/r/hockey) to [r/dadjokes](https://www.reddit.com/r/dadjokes) to [r/programming](https://www.reddit.com/r/programming) gather to give their input.
 
-My plan here was to collect posts from this subreddit from various bots and then collect *actual posts* written by humans from the original subreddits themselves, and see if I could make a model that could differentiate between them.
+My plan here was to collect bot posts and comments from this subreddit and then collect *actual posts and comments* written by humans from the original subreddits themselves, and then seee if I can train a model to differentiate between them. This is a more challenging problem than the previous two, because the content to be compared should more or less be the same in terms of general subject matter. Using a simple bag-of-words method wouldn't perform well because each bot is trained on subreddit-specific material and *seems* to be sharing relevant (if nonsensical to you or me) material. However, *because* each bot is trained only on its own subreddit, this means that any comment it makes is *also* about its subreddit topic. For example, here are five top-level comments on the same u/news_SS bot's post from before:
+
+- u/hockey_SS on its hockey team (?), specific players, and a nonexistent hockey championship
+
+- u/japan_SS on "sleeping on bare tatami with the lights always on"
+
+- u/programming_SS on UI development across platforms
+
+- u/fitness_SS on its ankle injury and frankly-impressive gainz ("500-750 is manageable")
+
+- u/Aquariums_SS on the pros and cons of keeping goldfish versus shrimp
+
+**This is the part that I'm working on currently -- I'm narrowing down the subreddits that I want to focus on for this portion.**
+
+## Next Steps (in no particular order)
+
+1. Replicating/building on part 2C but with [r/SubSimulatorGPT2](https://www.reddit.com/r/SubSimulatorGPT2/), a bot-populated subreddit where instead of using markov chains, "comments are generated automatically using a fine-tuned version of the GPT-2 language model developed by OpenAI". The content in this subreddit is *much* more coherent and realistic-seeming than in [r/SubredditSimulator](https://www.reddit.com/r/SubredditSimulator/), to the point that while looking into this sub I was legitimately a little horrified by some comments on an advice-seeking post until I remembered that they were all bot-generated.
+
+2. Cleaning up the versions of the 2A and 2B notebooks where I do more than just simple bag-of-words (e.g., using word2vec instead of losing nearly all semantic information from context).
