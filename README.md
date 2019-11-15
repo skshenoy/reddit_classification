@@ -67,4 +67,4 @@ My plan here was to collect bot posts and comments from this subreddit and then 
 
 1. Replicating/building on part 2C but with [r/SubSimulatorGPT2](https://www.reddit.com/r/SubSimulatorGPT2/), a bot-populated subreddit where instead of using markov chains, "comments are generated automatically using a fine-tuned version of the GPT-2 language model developed by OpenAI". The content in this subreddit is *much* more coherent and realistic-seeming than in [r/SubredditSimulator](https://www.reddit.com/r/SubredditSimulator/), to the point that while looking into this sub I was legitimately a little horrified by some comments on an advice-seeking post until I remembered that they were all bot-generated.
 
-2. Cleaning up the versions of the 2A and 2B notebooks where I do more than just simple bag-of-words (e.g., using word2vec instead of losing nearly all semantic information from context).
+2. Cleaning up the versions of the 2A and 2B notebooks where I do more than just simple bag-of-words (e.g., using word2vec).
